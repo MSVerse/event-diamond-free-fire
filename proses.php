@@ -5,10 +5,6 @@
 // <!-- Homepage : https://msversee.blogspot.com -->
 // <!-- Massage  : If there are any bugs or other issues, please fix them yourself. Don't be spoiled. -->
 
-// Redirect immediately when the file is accessed directly
-header("Location: verify.php");
-exit;
-
 // Redirect after form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
@@ -28,4 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: verify.php");
     exit;
 }
+
+// Redirect immediately when the file is accessed directly (without POST request)
+header("Location: verify.php");
+exit;
 ?>
